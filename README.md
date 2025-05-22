@@ -1,6 +1,5 @@
 <h2 align="center">
   Portfolio Website - v2.0<br/>
-  <a href="https://soumyajit.vercel.app/" target="_blank">soumyajit.tech</a>
 </h2>
 <div align="center">
   <img alt="Demo" src="./Images/readme-img1.png" />
@@ -31,7 +30,7 @@ You can fork this repo to modify and make changes of your own. Please give me pr
 
 ## Built With
 
-My personal portfolio <a href="https://soumyajit.vercel.app/" target="_blank">soumyajit.tech</a> which features some of my github projects as well as my resume and technical skills.<br/>
+This portfolio website features some of my github projects as well as my resume and technical skills.<br/>
 
 This project was built using these technologies.
 
@@ -69,8 +68,14 @@ The page will reload if you make edits.
 Open the project folder and Navigate to `/src/components/`. <br/>
 You will find all the components used and you can edit your information accordingly.
 
-### Show your support
+## Vercel Deployment
 
-Give a ⭐ if you like this website!
+To deploy this project to your Vercel account, ensure that this Git repository is connected to your Vercel project.
 
-<a href="https://www.buymeacoffee.com/soumyajit4419" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-violet.png" alt="Buy Me A Coffee" height= "60px" width= "217px" ></a>
+1.  Go to your Vercel dashboard.
+2.  Select your project (e.g., "portfolio" under an organization like "adrian-guzman-s-projects").
+3.  Navigate to the "Git" section in your project settings.
+4.  Ensure this repository is linked as the source. If not, connect this Git repository.
+5.  Vercel will automatically build and deploy your project when you push changes to the connected branch (usually `main` or `master`).
+
+A `vercel.json` file has been added with the project name "portfolio" to help Vercel identify the correct project. However, linking the repository through the Vercel dashboard is the most crucial step.
