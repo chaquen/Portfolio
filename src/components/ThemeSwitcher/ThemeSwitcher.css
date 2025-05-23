@@ -1,0 +1,98 @@
+.theme-switcher-container {
+  padding: 10px;
+  border: 1px solid var(--subtle-background-color); /* Use a theme variable for border */
+  border-radius: 8px;
+  margin-top: 8px; /* Space from navbar items if it's a dropdown, or from top if fixed */
+  background-color: var(--background-color); /* Use a theme variable, slightly different from body */
+  color: var(--text-color); /* Use a theme variable */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  max-width: 250px; /* Limit width to prevent navbar overflow */
+  font-size: 0.8rem; /* Smaller base font for elements inside */
+}
+
+.theme-switcher-container h4 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 1rem; /* Slightly larger for the main title */
+  text-align: center;
+  border-bottom: 1px solid var(--subtle-background-color);
+  padding-bottom: 8px;
+}
+
+.theme-switcher-container h5 {
+  margin-top: 10px;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+  border-bottom: 1px solid var(--subtle-background-color);
+  padding-bottom: 4px;
+  font-weight: bold;
+}
+
+.predefined-themes div, .custom-colors div {
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Distributes space between label and input */
+}
+
+.predefined-themes label, .custom-colors label {
+  margin-right: 8px;
+  font-size: 0.85rem;
+  white-space: nowrap; /* Prevent labels from wrapping */
+}
+
+.predefined-themes input[type="radio"] {
+  margin-right: 5px;
+  vertical-align: middle;
+}
+.predefined-themes label {
+    flex-grow: 1; /* Allows label to take available space, pushing radio to left */
+}
+
+
+.custom-colors input[type="color"] {
+  /* margin-left: auto; */ /* Pushes color picker to the right - using justify-content now */
+  width: 60px; /* Adjust size */
+  height: 25px; /* Adjust size */
+  border: 1px solid var(--subtle-background-color);
+  border-radius: 4px;
+  padding: 1px; /* Small padding for the color picker itself */
+}
+
+.theme-switcher-container button {
+  margin-top: 10px;
+  padding: 6px 12px;
+  font-size: 0.85rem;
+  background-color: var(--accent-color);
+  color: var(--background-color); /* Text color that contrasts with accent */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: block; /* Make button take full width */
+  width: 100%;
+  transition: background-color 0.2s ease;
+}
+
+.theme-switcher-container button:hover {
+  opacity: 0.9; /* Slight hover effect */
+}
+
+/* Adjustments for when ThemeSwitcher is in a NavItem context in Bootstrap Navbar */
+.nav-item > .theme-switcher-container {
+    position: absolute; /* Position it absolutely to not affect navbar flow directly */
+    top: 100%; /* Position it below the NavItem */
+    right: 0; /* Align to the right of the NavItem, adjust as needed */
+    z-index: 1050; /* Ensure it's above other navbar content */
+    min-width: 220px; /* Ensure it has a decent minimum width */
+}
+
+/* This is a conceptual class, we need a way to toggle visibility.
+   For now, assuming it's always visible when added or controlled by parent.
+.theme-switcher-dropdown {
+    display: none;
+}
+.nav-item:hover .theme-switcher-dropdown,
+.nav-item:focus-within .theme-switcher-dropdown {
+    display: block;
+}
+*/

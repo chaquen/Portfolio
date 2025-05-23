@@ -1,8 +1,33 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap");
+
+:root {
+  --primary-color: #003366; /* Azul Principal */
+  --secondary-color: #007BFF; /* Azul de Acento */
+  --background-color: #FFFFFF; /* Blanco */
+  --text-color: #333333; /* Gris para texto */
+  --subtle-background-color: #F2F2F2; /* Gris muy claro para fondos sutiles */
+  --accent-color: #007BFF; /* Color de acento, puede ser el mismo que el secundario o diferente */
+}
+
 body {
   margin: 0;
   font-family: "Raleway", serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: linear-gradient(to left, rgb(27 20 41), rgb(20 15 35));
+  /* background-image: linear-gradient(to left, rgb(27 20 41), rgb(20 15 35)); */
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Example for elements that use accent color for their background */
+.accent-bg-element { /* Add this class to elements that use accent color for background */
+    background-color: var(--accent-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Example for elements that use accent color for their text */
+.accent-text-element { /* Add this class to elements that use accent color for text */
+    color: var(--accent-color);
+    transition: color 0.3s ease;
 }

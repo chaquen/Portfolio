@@ -15,6 +15,7 @@ import {
 } from "react-icons/ai";
 
 import { CgFileDocument } from "react-icons/cg";
+import ThemeSwitcher from "./ThemeSwitcher/ThemeSwitcher"; // Import ThemeSwitcher
 
 function NavBar() {
   const [expand, updateExpanded] = useState(false);
@@ -100,6 +101,11 @@ function NavBar() {
               >
                 <ImBlog style={{ marginBottom: "2px" }} /> Blogs
               </Nav.Link>
+            </Nav.Item>
+
+            {/* Add ThemeSwitcher here */}
+            <Nav.Item>
+              <ThemeSwitcher />
             </Nav.Item>
 
             <Nav.Item className="fork-btn">

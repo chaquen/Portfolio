@@ -2,6 +2,39 @@
 <html lang="en">
 
 <head>
+  <script>
+    (function() {
+      try {
+        const customTheme = localStorage.getItem('customTheme');
+        const predefinedTheme = localStorage.getItem('theme');
+
+        if (customTheme) {
+          const colors = JSON.parse(customTheme);
+          document.documentElement.style.setProperty('--background-color', colors.background);
+          document.documentElement.style.setProperty('--text-color', colors.text);
+          document.documentElement.style.setProperty('--accent-color', colors.accent);
+          // Add any other custom properties you plan to support
+        } else if (predefinedTheme) {
+          // This part requires the themes to be defined in CSS already,
+          // or you need to store the actual color values for predefined themes in localStorage too.
+          // For simplicity in this initial script, we can add a class to the html element.
+          // The CSS would then define variables based on this class.
+          // Example: html.theme-dark-mode { --background-color: #000; ... }
+          // Or, store the full color object for predefined themes as well.
+          // For now, let's assume we will handle predefined themes by setting specific color values
+          // directly, similar to custom themes, to avoid needing CSS to be loaded first.
+          // This means when saving a predefined theme, we should save its actual color map.
+          // This part will be more fleshed out when theme saving is implemented.
+          // For now, this script will prioritize custom themes.
+          // A more robust predefined theme application from this script will be
+          // developed in conjunction with the theme saving logic.
+        }
+        // If no theme is set, it will use the default CSS values.
+      } catch (e) {
+        console.error('Error applying theme from localStorage', e);
+      }
+    })();
+  </script>
   <meta charset="utf-8" />
   <link rel="icon" href="%PUBLIC_URL%/favicon.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
