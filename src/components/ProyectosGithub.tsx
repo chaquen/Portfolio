@@ -49,10 +49,10 @@ export default function ProyectosGithub({ t, reposIniciales }: { t: Contenido['p
   return (
     <>
       <div className="proyectos">
-        {estado.repos.map((r, i) => (
+        {estado.repos.map((r) => (
           <article key={r.name} className="ficha">
             <p className="ficha__codigo">
-              P-{i + 1} · {[r.language ?? 'GitHub', ...r.topics.slice(0, 3)].join(' · ')}
+              {[r.language ?? 'GitHub', ...r.topics.slice(0, 3)].join(' · ')}
             </p>
             <h3>{r.name}</h3>
             <p className="ficha__texto">{r.description || t.sinDescripcion}</p>

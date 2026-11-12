@@ -111,9 +111,9 @@ export default function App({ idioma, reposIniciales, anioActual }: Props) {
             <p className="frase">{t.enfoque.frase}</p>
             <p className="sobre-mi">{t.sobreMi}</p>
             <div className="enfoque">
-              {t.enfoque.tarjetas.map((c, i) => (
+              {t.enfoque.tarjetas.map((c) => (
                 <article key={c.titulo} className={`ficha${c.ia ? ' ficha--ia' : ''}`}>
-                  <p className="ficha__codigo">D-{i + 1}{c.ia ? ' · IA' : ''}</p>
+                  {c.ia && <p className="ficha__codigo">IA</p>}
                   <h3>{c.titulo}</h3>
                   <p className="ficha__texto">{c.texto}</p>
                 </article>
@@ -139,13 +139,13 @@ export default function App({ idioma, reposIniciales, anioActual }: Props) {
               ))}
             </div>
             <ol className="linea" style={{ '--columnas': columnas } as CSSProperties}>
-              {t.experiencia.items.map((e, i) => {
+              {t.experiencia.items.map((e) => {
                 const actual = e.fin === null
                 return (
                   <li key={`${e.empresa}-${e.inicio}`} className={`ficha${actual ? ' ficha--actual' : ''}`}>
                     <p className="ficha__codigo ficha__codigo--fila">
-                      <span>A-{t.experiencia.items.length - i}{actual ? ` · ${t.experiencia.actual}` : ''}</span>
                       <span>{e.inicio} — {actual ? t.experiencia.hoy : e.fin}</span>
+                      {actual && <span>{t.experiencia.actual}</span>}
                     </p>
                     <h3>{e.cargo}</h3>
                     <p className="ficha__empresa">{e.empresa} · {e.lugar}</p>
