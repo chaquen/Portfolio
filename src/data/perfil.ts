@@ -53,7 +53,7 @@ export type Contenido = {
   enfoque: { titulo: string; frase: string; tarjetas: TarjetaEnfoque[] }
   experiencia: { titulo: string; escala: string; actual: string; hoy: string; verLogros: string; cota: string; items: Experiencia[] }
   habilidades: { titulo: string; nota: string; capa: string; tambien: string; capas: Capa[]; otras: string[] }
-  proyectos: { titulo: string; nota: string; intro: string; verCodigo: string; verSitio: string; cargando: string; error: string; verTodos: string; sinDescripcion: string; actualizado: string; meses: string[] }
+  proyectos: { titulo: string; nota: string; intro: string; verCodigo: string; verSitio: string; cargando: string; error: string; verTodos: string; actualizado: string; meses: string[] }
   formacion: { titulo: string; educacionTitulo: string; educacion: Hito[]; certificacionesTitulo: string; certificaciones: Hito[]; idiomasTitulo: string; idiomas: string }
   contacto: { titulo: string; texto: string; boton: string }
   cajetin: { autor: string; oficio: string; oficioValor: string; escala: string }
@@ -73,15 +73,15 @@ export const contenido: Record<Idioma, Contenido> = {
     menu: 'Menú',
     idioma: 'Idioma',
     titulo: 'Edgar Adrián Guzmán Vargas · Desarrollador .NET Senior y arquitecto de software',
-    descripcion: 'Desarrollador .NET Senior y arquitecto de software con más de 10 años de experiencia. Microservicios, integraciones orientadas a eventos, liderazgo técnico y agentes con LLM.',
+    descripcion: 'Desarrollador .NET Senior y arquitecto de software con más de 10 años de experiencia. Microservicios, integraciones orientadas a eventos, CI/CD e infraestructura como código, y agentes con LLM.',
     ceja: 'Plano Nº 01 · Ingeniería de software',
     rol: 'Desarrollador .NET Senior · Arquitecto de software',
     lema: 'Más de 10 años construyendo software que escala. Trabajo con la IA como parte del equipo para explorar, prototipar y entregar más rápido; el criterio de arquitectura lo pongo yo.',
-    sobreMi: 'Ingeniero de software con más de 10 años de trayectoria. He liderado la modernización de sistemas legados hacia microservicios con .NET Core, arquitecturas serverless y en contenedores, e integraciones asíncronas orientadas a eventos. Soy Magíster en Ingeniería de Sistemas y Computación de la Universidad Nacional de Colombia, lidero técnicamente una célula de desarrollo y diseño arquitecturas agénticas basadas en LLM.',
+    sobreMi: 'Ingeniero de software con más de 10 años de trayectoria. He participado en la modernización de sistemas legados hacia microservicios con .NET Core, arquitecturas serverless y en contenedores, y propuse e implementé integraciones asíncronas orientadas a eventos, CI/CD con Terraform y agentes con LLM. Soy Magíster en Ingeniería de Sistemas y Computación de la Universidad Nacional de Colombia, defino el diseño técnico de nuevas funcionalidades y acompaño a otros desarrolladores en su crecimiento.',
     ubicacion: 'Bogotá, Colombia',
     datos: [
       { valor: '10+', unidad: 'años', texto: 'desarrollando software, de 2015 a hoy' },
-      { valor: 'Líder', unidad: 'técnico', texto: 'de una célula de desarrollo y mentor de perfiles Junior y Semi-Senior' },
+      { valor: 'Diseño', unidad: 'técnico', texto: 'de nuevas funcionalidades y acompañamiento a perfiles Junior y Semi-Senior' },
       { valor: 'Magíster', unidad: '', texto: 'en Ingeniería de Sistemas y Computación · U. Nacional, 2026' },
       { valor: 'IA', unidad: 'aplicada', texto: 'arquitecturas agénticas con LLM y pruebas de concepto', ia: true },
     ],
@@ -89,10 +89,10 @@ export const contenido: Record<Idioma, Contenido> = {
       titulo: 'Enfoque',
       frase: '10 años de oficio, con la IA a mi favor: la uso para ir más rápido, no para pensar menos.',
       tarjetas: [
-        { titulo: 'Arquitectura con criterio', texto: 'He llevado sistemas de monolito a microservicios y de código legado a .NET Core. Decido cómo se divide un sistema y por qué.' },
+        { titulo: 'Arquitectura con criterio', texto: 'He trabajado en llevar sistemas de monolito a microservicios y de código legado a .NET Core. Me importa decidir cómo se divide un sistema y por qué.' },
         { titulo: 'La IA en mi flujo de trabajo', texto: 'Uso asistentes de IA para explorar opciones, escribir pruebas y documentar. Reviso y respondo por cada línea que entra al código.', ia: true },
         { titulo: 'Agentes con LLM', texto: 'Diseño arquitecturas de sistemas agénticos y pruebas de concepto para automatizar procesos internos, con LangGraph.', ia: true },
-        { titulo: 'Equipo y entrega', texto: 'Lidero una célula de desarrollo, acompaño a perfiles Junior y Semi-Senior y automatizo despliegues con CI/CD.' },
+        { titulo: 'Iniciativa y entrega', texto: 'Propongo mejoras y las llevo a producción: integraciones con eventos, CI/CD con Terraform y agentes con LLM. Acompaño a perfiles Junior y Semi-Senior.' },
       ],
     },
     experiencia: {
@@ -125,7 +125,7 @@ export const contenido: Record<Idioma, Contenido> = {
           logros: [
             'Ejecuté la transición de una aplicación monolítica en PHP hacia microservicios con .NET Core.',
             'Mejoré procesos de software para facilitar el escalamiento de los servicios de la compañía.',
-            'Mantenimiento preventivo y correctivo de las plataformas críticas del negocio.',
+            'Realicé mantenimiento preventivo y correctivo de las plataformas críticas del negocio.',
           ],
         },
         {
@@ -134,14 +134,14 @@ export const contenido: Record<Idioma, Contenido> = {
           lugar: 'Bogotá',
           inicio: 2021,
           fin: null,
-          resumen: 'Modernizo sistemas legados hacia .NET Core, serverless y contenedores. Diseño integraciones orientadas a eventos, automatizo CI/CD e infraestructura como código, lidero el equipo y diseño agentes con LLM.',
+          resumen: 'Participé en la modernización de sistemas legados hacia .NET Core, serverless y contenedores. Propuse e implementé integraciones orientadas a eventos, CI/CD con Terraform y agentes con LLM.',
           logros: [
-            'Lideré la migración de aplicaciones con código legado hacia .NET Core, servicios serverless y contenedores (Docker).',
-            'Diseño integraciones asíncronas y orientadas a eventos con colas, buses de eventos, orquestación de flujos y RabbitMQ.',
-            'Implemento flujos de CI/CD e infraestructura como código con Terraform.',
-            'Coordino técnicamente nuevas funcionalidades, lidero un equipo de desarrolladores y brindo mentoría.',
-            'Diseñé arquitecturas de sistemas agénticos basados en LLM y pruebas de concepto para automatizar procesos internos.',
-            'Entré como Semi-Senior en 2021: evalué nuevos stacks para la modernización y ascendí a Senior ese mismo año.',
+            'Participé en la migración de aplicaciones con código legado hacia .NET Core, servicios serverless y contenedores (Docker); varias de las propuestas técnicas fueron mías.',
+            'Propuse y diseñé integraciones asíncronas orientadas a eventos con colas, buses de eventos, orquestación de flujos y RabbitMQ.',
+            'Propuse e implementé flujos de CI/CD e infraestructura como código con Terraform.',
+            'Definí el diseño técnico de nuevas funcionalidades antes de su implementación y acompañé a desarrolladores Junior y Semi-Senior.',
+            'Propuse y diseñé arquitecturas de sistemas agénticos basados en LLM y pruebas de concepto con LangGraph para automatizar procesos internos.',
+            'Entré como Semi-Senior en 2021: propuse y evalué nuevos stacks para la modernización y ascendí a Senior ese mismo año.',
           ],
         },
       ],
@@ -162,13 +162,12 @@ export const contenido: Record<Idioma, Contenido> = {
     proyectos: {
       titulo: 'Proyectos',
       nota: 'en vivo desde github.com/chaquen',
-      intro: 'Mi trabajo en empresa vive en repositorios privados; aquí están mis proyectos personales.',
+      intro: 'Proyectos personales donde exploro arquitectura, datos e IA. Esta lista se actualiza sola desde GitHub.',
       verCodigo: 'Ver código',
       verSitio: 'Ver sitio',
       cargando: 'Cargando proyectos desde GitHub…',
       error: 'No pude cargar los proyectos en este momento.',
       verTodos: 'Ver todos mis repositorios en GitHub',
-      sinDescripcion: 'Sin descripción.',
       actualizado: 'Actualizado',
       meses: ['ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'sep', 'oct', 'nov', 'dic'],
     },
@@ -206,15 +205,15 @@ export const contenido: Record<Idioma, Contenido> = {
     menu: 'Menu',
     idioma: 'Language',
     titulo: 'Edgar Adrián Guzmán Vargas · Senior .NET Developer and Software Architect',
-    descripcion: 'Senior .NET developer and software architect with 10+ years of experience. Microservices, event-driven integrations, technical leadership and LLM-based agents.',
+    descripcion: 'Senior .NET developer and software architect with 10+ years of experience. Microservices, event-driven integrations, CI/CD and infrastructure as code, and LLM-based agents.',
     ceja: 'Drawing Nº 01 · Software engineering',
     rol: 'Senior .NET Developer · Software Architect',
     lema: '10+ years building software that scales. I work with AI as part of the team to explore, prototype and ship faster; the architectural judgment is mine.',
-    sobreMi: 'Software engineer with 10+ years of experience. I have led the modernization of legacy systems into .NET Core microservices, serverless and container-based architectures, and asynchronous event-driven integrations. I hold an MSc in Systems and Computer Engineering from the National University of Colombia, lead a development team and design LLM-based agentic architectures.',
+    sobreMi: 'Software engineer with 10+ years of experience. I have taken part in modernizing legacy systems into .NET Core microservices, serverless and container-based architectures, and I proposed and built asynchronous event-driven integrations, CI/CD with Terraform and LLM-based agents. I hold an MSc in Systems and Computer Engineering from the National University of Colombia, define the technical design of new features and help other developers grow.',
     ubicacion: 'Bogotá, Colombia',
     datos: [
       { valor: '10+', unidad: 'years', texto: 'building software, from 2015 to today' },
-      { valor: 'Tech', unidad: 'lead', texto: 'of a development team and mentor to junior and mid-level developers' },
+      { valor: 'Technical', unidad: 'design', texto: 'of new features and support for junior and mid-level developers' },
       { valor: 'MSc', unidad: '', texto: 'in Systems and Computer Engineering · National University of Colombia, 2026' },
       { valor: 'AI', unidad: 'applied', texto: 'LLM-based agentic architectures and proofs of concept', ia: true },
     ],
@@ -222,10 +221,10 @@ export const contenido: Record<Idioma, Contenido> = {
       titulo: 'Approach',
       frase: '10 years of craft, with AI on my side: I use it to move faster, not to think less.',
       tarjetas: [
-        { titulo: 'Architecture with judgment', texto: 'I have taken systems from monoliths to microservices and from legacy code to .NET Core. I decide how a system is split and why.' },
+        { titulo: 'Architecture with judgment', texto: 'I have worked on taking systems from monoliths to microservices and from legacy code to .NET Core. I care about deciding how a system is split and why.' },
         { titulo: 'AI in my workflow', texto: 'I use AI assistants to explore options, write tests and document. I review and own every line that goes into the code.', ia: true },
         { titulo: 'LLM agents', texto: 'I design agentic system architectures and proofs of concept to automate internal processes, using LangGraph.', ia: true },
-        { titulo: 'Team and delivery', texto: 'I lead a development team, mentor junior and mid-level developers and automate deployments with CI/CD.' },
+        { titulo: 'Initiative and delivery', texto: 'I propose improvements and take them to production: event-driven integrations, CI/CD with Terraform and LLM agents. I support junior and mid-level developers.' },
       ],
     },
     experiencia: {
@@ -258,7 +257,7 @@ export const contenido: Record<Idioma, Contenido> = {
           logros: [
             'Moved a monolithic PHP application to a .NET Core microservices ecosystem.',
             "Improved software processes to help scale the company's services.",
-            'Preventive and corrective maintenance of business-critical platforms.',
+            'Performed preventive and corrective maintenance of business-critical platforms.',
           ],
         },
         {
@@ -267,14 +266,14 @@ export const contenido: Record<Idioma, Contenido> = {
           lugar: 'Bogotá',
           inicio: 2021,
           fin: null,
-          resumen: 'I modernize legacy systems into .NET Core, serverless and containers. I design event-driven integrations, automate CI/CD and infrastructure as code, lead the team and design LLM agents.',
+          resumen: 'Took part in modernizing legacy systems into .NET Core, serverless and containers. Proposed and built event-driven integrations, CI/CD with Terraform and LLM agents.',
           logros: [
-            'Led the migration of legacy applications to .NET Core, serverless services and containers (Docker).',
-            'Design asynchronous, event-driven integrations with queues, event buses, workflow orchestration and RabbitMQ.',
-            'Implement CI/CD pipelines and infrastructure as code with Terraform.',
-            'Coordinate the technical delivery of new features, lead a team of developers and mentor them.',
-            'Designed LLM-based agentic system architectures and proofs of concept to automate internal processes.',
-            'Joined as a mid-level developer in 2021, evaluated new stacks for modernization and was promoted to Senior the same year.',
+            'Took part in migrating legacy applications to .NET Core, serverless services and containers (Docker); several of the technical proposals were mine.',
+            'Proposed and designed asynchronous, event-driven integrations with queues, event buses, workflow orchestration and RabbitMQ.',
+            'Proposed and built CI/CD pipelines and infrastructure as code with Terraform.',
+            'Defined the technical design of new features before they were built and supported junior and mid-level developers.',
+            'Proposed and designed LLM-based agentic system architectures and proofs of concept with LangGraph to automate internal processes.',
+            'Joined as a mid-level developer in 2021, proposed and evaluated new stacks for modernization and was promoted to Senior the same year.',
           ],
         },
       ],
@@ -295,13 +294,12 @@ export const contenido: Record<Idioma, Contenido> = {
     proyectos: {
       titulo: 'Projects',
       nota: 'live from github.com/chaquen',
-      intro: 'My company work lives in private repositories; these are my personal projects.',
+      intro: 'Personal projects where I explore architecture, data and AI. This list updates itself from GitHub.',
       verCodigo: 'View code',
       verSitio: 'View site',
       cargando: 'Loading projects from GitHub…',
       error: 'I could not load the projects right now.',
       verTodos: 'See all my repositories on GitHub',
-      sinDescripcion: 'No description.',
       actualizado: 'Updated',
       meses: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
     },

@@ -55,7 +55,7 @@ export default function ProyectosGithub({ t, reposIniciales }: { t: Contenido['p
               {[r.language ?? 'GitHub', ...r.topics.slice(0, 3)].join(' · ')}
             </p>
             <h3>{r.name}</h3>
-            <p className="ficha__texto">{r.description || t.sinDescripcion}</p>
+            <p className="ficha__texto">{r.description}</p>
             <p className="ficha__meta">{t.actualizado} {fecha(r.pushed_at)}</p>
             <div className="ficha__enlaces">
               <a className="enlace" href={r.html_url} target="_blank" rel="noopener noreferrer">{t.verCodigo} →</a>
