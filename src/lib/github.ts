@@ -15,10 +15,13 @@ type RepoApi = Repo & { fork: boolean; archived: boolean }
 
 export const urlRepos = `https://api.github.com/users/${usuarioGithub}/repos?per_page=100&sort=pushed`
 
-// Se muestran los repos públicos que no son fork ni están archivados.
+// Se muestran los repos públicos que no son fork, no están archivados y tienen descripción.
 // Si alguno tiene el topic `portafolio`, se muestran solo esos.
+// Para retirar un repo del portafolio basta con archivarlo o quitarle la descripción en GitHub.
 export function filtrarRepos(todos: RepoApi[]): Repo[] {
-  const propios = todos.filter((r) => !r.fork && !r.archived && !reposExcluidos.includes(r.name))
+  const propios = todos.filter(
+    (r) => !r.fork && !r.archived && !reposExcluidos.includes(r.name) && Boolean(r.description?.trim()),
+  )
   const marcados = propios.filter((r) => r.topics?.includes(topicPortafolio))
   return (marcados.length > 0 ? marcados : propios).map((r) => ({
     name: r.name,

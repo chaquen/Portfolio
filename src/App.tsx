@@ -32,8 +32,12 @@ export default function App({ idioma, reposIniciales, anioActual }: Props) {
   ] as const
 
   const totalAnios = anioActual - anioInicio
-  const columnas = t.experiencia.items.map((e) => `${Math.max(1, (e.fin ?? anioActual) - e.inicio)}fr`).join(' ')
-  const marcas = Array.from({ length: totalAnios + 1 }, (_, i) => anioInicio + i)
+  // La experiencia se muestra de la más reciente a la más antigua; la regla de años va en el mismo sentido.
+  const experiencias = [...t.experiencia.items].sort(
+    (a, b) => b.inicio - a.inicio || (b.fin ?? anioActual + 1) - (a.fin ?? anioActual + 1),
+  )
+  const columnas = experiencias.map((e) => `${Math.max(1, (e.fin ?? anioActual) - e.inicio)}fr`).join(' ')
+  const marcas = Array.from({ length: totalAnios + 1 }, (_, i) => anioActual - i)
   const capasDeArriba = [...t.habilidades.capas].reverse()
 
   return (
@@ -129,17 +133,17 @@ export default function App({ idioma, reposIniciales, anioActual }: Props) {
               {marcas.map((a, i) => (
                 <span
                   key={a}
-                  className={`regla__marca${i % 2 === 0 || a === anioActual ? ' regla__marca--larga' : ''}`}
+                  className={`regla__marca${(a - anioInicio) % 2 === 0 || a === anioActual ? ' regla__marca--larga' : ''}`}
                   style={{ left: `${(i / totalAnios) * 100}%` } as CSSProperties}
                 >
-                  {(i % 2 === 0 || a === anioActual) && (i < totalAnios - 1 || a === anioActual) && (
+                  {(a === anioActual || ((a - anioInicio) % 2 === 0 && a < anioActual - 1)) && (
                     <em>{a === anioActual ? t.experiencia.hoy : a}</em>
                   )}
                 </span>
               ))}
             </div>
             <ol className="linea" style={{ '--columnas': columnas } as CSSProperties}>
-              {t.experiencia.items.map((e) => {
+              {experiencias.map((e) => {
                 const actual = e.fin === null
                 return (
                   <li key={`${e.empresa}-${e.inicio}`} className={`ficha${actual ? ' ficha--actual' : ''}`}>
@@ -158,7 +162,7 @@ export default function App({ idioma, reposIniciales, anioActual }: Props) {
                 )
               })}
             </ol>
-            <p className="cota" aria-hidden="true"><span>{anioInicio} · {t.experiencia.cota} · {t.experiencia.hoy}</span></p>
+            <p className="cota" aria-hidden="true"><span>{t.experiencia.hoy} · {t.experiencia.cota} · {anioInicio}</span></p>
           </div>
         </section>
 
